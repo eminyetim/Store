@@ -1,0 +1,27 @@
+@model IQueryable<Product>
+
+@section Footer {
+    <div>
+        Only for Index footer
+    </div>
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row my-3">
+        @foreach (Product prd in Model)
+        {
+            <partial name="_ProductCard" model="@prd"></partial>
+        }
+    </div>
+</body>
+
+</html>

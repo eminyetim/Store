@@ -1,0 +1,39 @@
+@model IQueryable<Category>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div class="text-center my-3">
+        <h6 class="display-6">
+            Categories 
+        </h6>
+    </div>
+</head>
+
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <td scope="col">Category Id</td>
+                <td scope="col">Category Name</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var _model in @Model)
+            {
+                <tr>
+                    <td>@_model.CategoryId</td>
+                    <td>@_model.CategoryName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+</html>
