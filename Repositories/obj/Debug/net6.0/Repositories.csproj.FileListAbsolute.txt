@@ -13,3 +13,4 @@ C:\Users\eminy\DotnetEmin\Store\Repositories\obj\Debug\net6.0\ref\Repositories.d
 c:\Users\eminy\DotnetEmin\Store\Repositories\bin\Debug\net6.0\Entities.dll
 c:\Users\eminy\DotnetEmin\Store\Repositories\bin\Debug\net6.0\Entities.pdb
 C:\Users\eminy\DotnetEmin\Store\Repositories\obj\Debug\net6.0\Reposito.787EC4B2.Up2Date
+C:\Users\eminy\DotnetEmin\Store\Repositories\obj\Debug\net6.0\Repositories.sourcelink.json
