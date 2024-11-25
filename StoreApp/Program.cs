@@ -31,11 +31,13 @@ builder.Services.AddSingleton<HttpContextAccessor,HttpContextAccessor>(); // Bir
 builder.Services.AddScoped<IRepositoryManager,RepositoryManager>();//Repository ile karşılaşırsa RepositoryManager nesnesini çözücek
 builder.Services.AddScoped<IProductRepository,ProductRepository>();//Product ile karşılaşırsa ProductRepository nesnesini çözücek
 builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+builder.Services.AddScoped<IOrderRepository,OrderRepository>();
 
 
 builder.Services.AddScoped<IServiceManager,ServiceManager>();
 builder.Services.AddScoped<IProductService,ProductManager>();
 builder.Services.AddScoped<ICategoryService,CategoryManager>(); //Scoped her kullanıcı için ayrı oluşturur.
+builder.Services.AddScoped<IOrderService,OrderManager>(); //Scoped her kullanıcı için ayrı oluşturur.
 
 builder.Services.AddHttpContextAccessor();//Eklemeyi unuttuğum için çalışmıyor.
 builder.Services.AddScoped<Cart>(c => SessionCart.GetCart(c));
