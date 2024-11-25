@@ -54,7 +54,6 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints => 
 {
-
     endpoints.MapAreaControllerRoute(
         name : "Admin",
         areaName :"Admin",

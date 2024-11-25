@@ -7,7 +7,7 @@ using Services.Contracts;
 namespace StoreApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductController : Controller
+    public class ProductController : Controller 
     {
         private  readonly IServiceManager _manager;
 
