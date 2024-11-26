@@ -1,4 +1,6 @@
 using Entities.Models;
+using Entities.RequestParameters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Repositories.Contracts;
 
@@ -16,7 +18,6 @@ namespace Repositories
 
         public void UpdateOneProduct(Product product) => Update(product);
 
-
         public IQueryable<Product> GetAllProducts(bool trackChanges) => FindAll(trackChanges);
 
         public IQueryable<Product> UpdateOneProduct(bool trackChanges) => FindAll(trackChanges);
@@ -31,6 +32,17 @@ namespace Repositories
             return FindAll(trackChanges)
             .Where( p => p.ShowCase==true);
         }
-    }
 
+        public IQueryable<Product> GetAllProductWithDetails(ProductRequestParameters p1)
+        {
+            return p1.CategoryId is null 
+                ? _context
+                    .Products
+                    .Include(p => p.Category)
+                : _context
+                    .Products
+                    .Include(p=>p.Category)
+                    .Where(p=>p.CategoryId.Equals(p1.CategoryId));
+        }
+    }
 }

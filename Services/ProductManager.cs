@@ -1,6 +1,7 @@
 using AutoMapper;
 using Entities.Dtos;
 using Entities.Models;
+using Entities.RequestParameters;
 using Repositories.Contracts;
 using Services.Contracts;
 
@@ -33,6 +34,11 @@ namespace Services
         public IEnumerable<Product> GetAllProducts(bool trackChanges)
         {
            return _manager.Product.GetAllProducts(trackChanges);
+        }
+
+        public IQueryable<Product> GetAllProductWithDetails(ProductRequestParameters p)
+        {
+            return _manager.Product.GetAllProductWithDetails(p);
         }
 
         public Product? GetOneProduct(int id, bool trackChanges)
