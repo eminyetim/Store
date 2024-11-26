@@ -18,5 +18,16 @@ namespace StoreApp.Infrastructe.Extensions
                 context.Database.Migrate();  // Dotnet ef database update
             }
         }
+    
+        public static void ConfigureLocalization(this WebApplication app)
+        {
+            app.UseRequestLocalization(options => 
+                {
+                    options.AddSupportedCultures("tr-TR") //Desteklenen Kültür.
+                    .AddSupportedUICultures("tr-TR")//UI Kültür.
+                    .SetDefaultCulture("tr-TR");//Default Kültür.
+                }
+            );
+        }
     }
 }
