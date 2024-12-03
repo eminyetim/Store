@@ -12,8 +12,5 @@ namespace Repositories.Contracts
         void Remove(T entity);
 
         void Update(T entity);
-
     }
-
-
 }

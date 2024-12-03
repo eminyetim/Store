@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Repositories;
 using Repositories.Contracts;
 using Services.Contracts;
+using StoreApp.Models;
 
 namespace StoreApp.controller
 {
@@ -16,11 +17,22 @@ namespace StoreApp.controller
             _manager = manager;
         }
 
-        public IActionResult Index(ProductRequestParameters p)
-        {   
-            var model = _manager.ProductService.GetAllProductWithDetails(p);
-            return  View(model);        
-        } 
+         public IActionResult Index(ProductRequestParameters p)
+        {
+            var products = _manager.ProductService.GetAllProductWithDetails(p);
+            var pagination = new Pagination()
+            {
+                CurrenPage = p.pageNumber,
+                ItemsPerPage = p.pageSize,
+                TotalItems = _manager.ProductService.GetAllProducts(false).Count()
+            };
+            return View(new ProductListViewModel()
+            {
+                Products = products,
+                Pagination = pagination
+            });
+        }
+
 
         public IActionResult Get([FromRoute(Name ="id")] int id)
         {
