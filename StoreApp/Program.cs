@@ -15,9 +15,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpContextAccessor();//Eklemeyi unuttuğum için çalışmıyor.
 
 
-
 //Extension sınıfından çağırıyoruz.
 builder.Services.ConfigureDbContext(builder.Configuration);
+builder.Services.ConfigureIdentitiy();
 builder.Services.ConfigureSession();
 builder.Services.ConfigureRepositoryRegistration();
 builder.Services.ConfigureServiceRegistration();
