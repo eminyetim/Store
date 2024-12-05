@@ -32,7 +32,7 @@ app.UseStaticFiles();
 app.UseSession();
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.ConfigureDefaultAdminUser();
 
 app.UseEndpoints(endpoints => 
 {

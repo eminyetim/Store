@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eminy\\dotnetemin\\store\\Entities\\Entities.csproj": {}
+    "C:\\Users\\eminy\\DotnetEmin\\Store\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eminy\\dotnetemin\\store\\Entities\\Entities.csproj": {
+    "C:\\Users\\eminy\\DotnetEmin\\Store\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eminy\\dotnetemin\\store\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\eminy\\DotnetEmin\\Store\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\eminy\\dotnetemin\\store\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\eminy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eminy\\dotnetemin\\store\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
