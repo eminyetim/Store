@@ -1,4 +1,5 @@
 using Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Services.Contracts;
@@ -17,17 +18,17 @@ namespace StoreApp.Controllers
             
         }
 
+        [Authorize]
         public ViewResult Checkout() => View(new Order());
-
         [HttpPost]
         [ValidateAntiForgeryToken] // Güvenlik amaçlı sahteciliği önlemek için yapılır.
+
         public IActionResult Checkout([FromForm]Order order)
         {
             if(_cart.Lines.Count() == 0)
             {
                 ModelState.AddModelError("","Sorry your cart is empty");
             }
-
             if(ModelState.IsValid)
             {
                 order.Lines = _cart.Lines.ToArray();

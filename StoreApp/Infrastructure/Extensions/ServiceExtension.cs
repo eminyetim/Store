@@ -1,4 +1,5 @@
 using Entities.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
@@ -17,7 +18,7 @@ namespace StoreApp.Infrastructe.Extensions
             {
                 options.UseSqlite(configuration.GetConnectionString("sqlconnection"),
                     b => b.MigrationsAssembly("StoreApp"));
-                
+
                 options.EnableSensitiveDataLogging(true);//Login bilgilerini loglarda gçsteriri.
             });
         }
@@ -32,7 +33,7 @@ namespace StoreApp.Infrastructe.Extensions
             })
             .AddEntityFrameworkStores<RepositoryContext>();
         }
-        
+
         public static void ConfigureSession(this IServiceCollection services)
         {
             services.AddDistributedMemoryCache();
@@ -46,6 +47,16 @@ namespace StoreApp.Infrastructe.Extensions
             services.AddScoped<Cart>(c => SessionCart.GetCart(c));
         }
 
+        public static void ConfigureApplicationCookie(this IServiceCollection services)
+        {
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = new PathString("/Account/Login");
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.AccessDeniedPath = new PathString("/Account/AccessDenied");
+            });
+        }
         public static void ConfigureRepositoryRegistration(this IServiceCollection services)
         {
             //IoC
@@ -61,8 +72,8 @@ namespace StoreApp.Infrastructe.Extensions
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>(); //Scoped her kullanıcı için ayrı oluşturur.
             services.AddScoped<IOrderService, OrderManager>(); //Scoped her kullanıcı için ayrı oluşturur.
-            services.AddScoped<IAuthService,AuthManager>();
-        
+            services.AddScoped<IAuthService, AuthManager>();
+
         }
     }
 }

@@ -9,45 +9,45 @@ namespace StoreApp.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _singInManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> singInManager)
         {
             _userManager = userManager;
-            _singInManager = singInManager;
+            _signInManager = singInManager;
         }
 
-        public IActionResult Login([FromQuery(Name ="ReturnUrl")] string ReturnUrl = "/")
+        public IActionResult Login([FromQuery(Name = "ReturnUrl")] string ReturnUrl = "/")
         {
             return View(new LoginModel()
             {
-                ReturnUrl = ReturnUrl 
+                ReturnUrl = ReturnUrl
             });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([FromForm] LoginModel model)
-        {   
-            if(ModelState.IsValid)
+        {
+            if (ModelState.IsValid)
             {
-                IdentityUser user = await  _userManager.FindByNameAsync(model.Name);
-                if(user is not null)
+                IdentityUser user = await _userManager.FindByNameAsync(model.Name);
+                if (user is not null)
                 {
-                    await _singInManager.SignOutAsync();
-                    if((await _singInManager.PasswordSignInAsync(user,model.Password,false,false)).Succeeded)
+                    await _signInManager.SignOutAsync();
+                    if ((await _signInManager.PasswordSignInAsync(user, model.Password, false, false)).Succeeded)
                     {
-                        return Redirect(model?._returnurl ?? "/");
+                        return Redirect(model?.ReturnUrl ?? "/");
                     }
                 }
-                ModelState.AddModelError("Error","Invalid username or password.");
+                ModelState.AddModelError("Error", "Invalid username or password.");
             }
             return View();
         }
 
-        public async Task<IActionResult> Logout([FromQuery(Name ="ReturnUrl")] string ReturnUrl = "/")
+        public async Task<IActionResult> Logout([FromQuery(Name = "ReturnUrl")] string ReturnUrl = "/")
         {
-            await _singInManager.SignOutAsync();
+            await _signInManager.SignOutAsync();
             return Redirect(ReturnUrl);
         }
 
@@ -65,22 +65,28 @@ namespace StoreApp.Controllers
                 UserName = model.UserName,
                 Email = model.Email
             };
-            
-            var result = await _userManager.CreateAsync(user,model.Password);
-            if(result.Succeeded)
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+            if (result.Succeeded)
             {
-                var roleResult = await _userManager.AddToRoleAsync(user,"User");
-                if(roleResult.Succeeded)
-                    return RedirectToAction("Login",new {ReturnUrl = "/"});
+                var roleResult = await _userManager.AddToRoleAsync(user, "User");
+                if (roleResult.Succeeded)
+                    return RedirectToAction("Login", new { ReturnUrl = "/" });
             }
             else
             {
                 foreach (var err in result.Errors)
                 {
-                    ModelState.AddModelError("",err.Description);
+                    ModelState.AddModelError("", err.Description);
                 }
             }
             return View();
         }
+
+        public IActionResult AccessDenied([FromQuery(Name = "ReturnUrl")] string returUrl)
+        {
+            return View();
+        }
+
     }
 }

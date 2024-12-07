@@ -10,6 +10,8 @@ using StoreApp.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers().AddApplicationPart(typeof(Presentation.AssemblyRefence).Assembly);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddHttpContextAccessor();//Eklemeyi unuttuğum için çalışmıyor.
@@ -36,9 +38,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.ConfigureDefaultAdminUser();
 
-
-app.UseAuthentication();  /* Bu iki satır app.UseRouting(); ve UseEndpoints arasında olmalı.  */
-app.UseAuthorization();
+/* Bu iki satır app.UseRouting(); ve UseEndpoints arasında olmalı.  */
+app.UseAuthorization(); // Önce otantike.
+app.UseAuthentication();  // Sonra yetkilendirme.
 
 app.UseEndpoints(endpoints => 
 {
@@ -54,6 +56,7 @@ app.UseEndpoints(endpoints =>
     );
 
     endpoints.MapRazorPages();
+    endpoints.MapControllers(); 
 }); 
 
 
