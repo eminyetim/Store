@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aBy8nU24wIk=",
+  "dgSpecHash": "iD+VcWjoBc8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Repositories\\Repositories.csproj",
+  "projectFilePath": "C:\\Users\\eminy\\dotnetemin\\store\\Repositories\\Repositories.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eminy\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0\\microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",
     "C:\\Users\\eminy\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.0\\microsoft.aspnetcore.cryptography.keyderivation.6.0.0.nupkg.sha512",

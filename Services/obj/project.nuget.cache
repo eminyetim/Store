@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E3GPgZds4tM=",
+  "dgSpecHash": "M6xdfbKza3U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Services\\Services.csproj",
+  "projectFilePath": "C:\\Users\\eminy\\dotnetemin\\store\\Services\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eminy\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\eminy\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -1507,11 +1507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eminy\\DotnetEmin\\Store\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\eminy\\dotnetemin\\store\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Services\\Services.csproj",
+      "projectPath": "C:\\Users\\eminy\\dotnetemin\\store\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\eminy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Services\\obj\\",
+      "outputPath": "C:\\Users\\eminy\\dotnetemin\\store\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1533,11 +1533,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\eminy\\DotnetEmin\\Store\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Entities\\Entities.csproj"
+            "C:\\Users\\eminy\\dotnetemin\\store\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\eminy\\dotnetemin\\store\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\eminy\\DotnetEmin\\Store\\Repositories\\Repositories.csproj": {
-              "projectPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Repositories\\Repositories.csproj"
+            "C:\\Users\\eminy\\dotnetemin\\store\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\Users\\eminy\\dotnetemin\\store\\Repositories\\Repositories.csproj"
             }
           }
         }
