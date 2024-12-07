@@ -28,11 +28,17 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
+
+
 app.UseStaticFiles();
 app.UseSession();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.ConfigureDefaultAdminUser();
+
+
+app.UseAuthentication();  /* Bu iki satır app.UseRouting(); ve UseEndpoints arasında olmalı.  */
+app.UseAuthorization();
 
 app.UseEndpoints(endpoints => 
 {
@@ -49,6 +55,7 @@ app.UseEndpoints(endpoints =>
 
     endpoints.MapRazorPages();
 }); 
+
 
 app.ConfigureAndCheckMigration();
 app.Run();

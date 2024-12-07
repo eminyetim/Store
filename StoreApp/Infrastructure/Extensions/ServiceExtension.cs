@@ -29,9 +29,6 @@ namespace StoreApp.Infrastructe.Extensions
                 options.SignIn.RequireConfirmedAccount = false;
                 options.User.RequireUniqueEmail = true;
                 options.Password.RequireLowercase = false;
-                options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 6;
-
             })
             .AddEntityFrameworkStores<RepositoryContext>();
         }
@@ -64,6 +61,8 @@ namespace StoreApp.Infrastructe.Extensions
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>(); //Scoped her kullanıcı için ayrı oluşturur.
             services.AddScoped<IOrderService, OrderManager>(); //Scoped her kullanıcı için ayrı oluşturur.
+            services.AddScoped<IAuthService,AuthManager>();
+        
         }
     }
 }

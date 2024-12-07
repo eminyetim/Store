@@ -1351,11 +1351,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eminy\\dotnetemin\\store\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "C:\\Users\\eminy\\DotnetEmin\\Store\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\eminy\\dotnetemin\\store\\Repositories\\Repositories.csproj",
+      "projectPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\eminy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eminy\\dotnetemin\\store\\Repositories\\obj\\",
+      "outputPath": "C:\\Users\\eminy\\DotnetEmin\\Store\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

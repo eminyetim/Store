@@ -1,0 +1,39 @@
+@model IEnumerable<IdentityUser>
+
+<div class="display-6 my-5">
+    <div class="text-center">
+        Users
+    </div>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>    
+                    <div class="btn-group">
+                        <a class="btn btn-sm btn-warning">Update</a>
+                        <a class="btn btn-sm btn-info">Reset Password</a>
+                        <a class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
