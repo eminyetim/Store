@@ -93,5 +93,9 @@ namespace StoreApp.Areas.Admin.Controllers
                 ? RedirectToAction("Index")
                 : View();
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> c3ebfcb8628795ea83d8c618e95c172eeac0bb1c
     }
 }
